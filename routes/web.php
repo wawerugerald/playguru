@@ -33,13 +33,17 @@ Route::middleware('auth')->group(function () {
 
     //region routes
     Route::get('/Regions', [RegionsController::class, 'index'])->name('regions');
+    Route::post('/regionsstore', [RegionsController::class, 'store'])->name('regions.store');
+    Route::get('/regions/{id}/edit', [RegionsController::class, 'edit'])->name('regions.edit');
+    Route::put('/regions/{id}', [RegionsController::class, 'update'])->name('regions.update');
+
+
 
     //industry routes
-    Route::get('/Industries',[IndustriesController::class, 'index'])->name('industries');
+    Route::get('/Industries', [IndustriesController::class, 'index'])->name('industries');
 
     //company routes
     Route::get('/Companies', [CompaniesController::class, 'index'])->name('companies');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
