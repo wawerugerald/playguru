@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegionsController;
+use App\Http\Controllers\IndustriesController;
+use App\Http\Controllers\CompaniesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +30,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //region routes
+    Route::get('/Regions', [RegionsController::class, 'index'])->name('regions');
+
+    //industry routes
+    Route::get('/Industries',[IndustriesController::class, 'index'])->name('industries');
+
+    //company routes
+    Route::get('/Companies', [CompaniesController::class, 'index'])->name('companies');
+
 });
 
 require __DIR__.'/auth.php';
