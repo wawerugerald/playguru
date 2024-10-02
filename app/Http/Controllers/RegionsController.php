@@ -11,7 +11,7 @@ class RegionsController extends Controller
     public function index()
     {
         // Get all regions
-        $regions = Regions::all();
+        $regions = Regions::orderBy('region_name', 'asc')->paginate(10);
 
         // Pass the regions to the view
         return view("regions.index")->with('regions', $regions);

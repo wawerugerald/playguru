@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
 
     //industry routes
     Route::get('/Industries', [IndustriesController::class, 'index'])->name('industries');
+    Route::post('/industrystore', [IndustriesController::class, 'store'])->name('industries.store');
 
     //company routes
     Route::get('/Companies', [CompaniesController::class, 'index'])->name('companies');
