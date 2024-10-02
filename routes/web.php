@@ -37,6 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/regions/{id}/edit', [RegionsController::class, 'edit'])->name('regions.edit');
     Route::put('/regions/{id}', [RegionsController::class, 'update'])->name('regions.update');
 
+    //event routes
+    Route::get('/events',[EventsController::class, 'index'])->name('events');
+
 
 
     //industry routes
